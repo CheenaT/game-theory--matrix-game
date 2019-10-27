@@ -116,17 +116,32 @@ def nash_equilibrium(a):
             break
         loop += 1
 
+        
+def visualization(p):
+    x = np.linspace(1, len(p), len(p) )
+    
+    plt.axis([0, len(p) + 1, 0, max(p) + 1/2]) 
+    plt.style.use('ggplot')
+    plt.stem(x, p, use_line_collection=True, basefmt=' ')
+    plt.show()
+        
 
-def main():
-    n = int(input())
-    m = int(input())
-    a = []
-    for i in range(n):
-        a.append([])
-    for j in range(m):
-        a[j] = list(map(int, input().split()))
-    a = np.array(a)
-    print(nash_equilibrium(a))
+def main(a = None):
+    if a is None:
+        n = int(input())
+        m = int(input())
+        a = []
+        for i in range(n):
+            a.append([])
+        for j in range(m):
+            a[j] = list(map(int, input().split()))
+        a = np.array(a)
+    p, q, s = nash_equilibrium(a)
+    visualization(p)
+    visualization(q)
+    print('\n Game value is :', s,
+          '\n optimal strategy for 1st player : ', p,
+          '\n optimal strategy for 2nd player : ', q)
 
 
 if __name__ == "__main__":
