@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 def pivot_on(a, row, col):
     pivot = a[row][col]
