@@ -79,7 +79,7 @@ def optimal_strategy(a, b):
             else:
                 p.append(a[0][j])
         else:
-            if j <= a.shape[0]:
+            if j < a.shape[0]:
                 q.append(0)
             else:
                 p.append(a[0][j])
