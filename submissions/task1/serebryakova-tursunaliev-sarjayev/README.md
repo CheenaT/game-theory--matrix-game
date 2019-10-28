@@ -1,0 +1,1 @@
+If jup.ipynb can't load you can see it [here](https://nbviewer.jupyter.org/github/CheenaT/game-theory--matrix-game/blob/task1-serebryakova-tursunaliev-sarjayev/submissions/task1/serebryakova-tursunaliev-sarjayev/jup.ipynb)
