@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from . import nash
 
 def pivot_on(a, row, col):
     pivot = a[row][col]
@@ -147,6 +146,7 @@ def main(a = None):
 
 if __name__ == "__main__":
     main()
+
 
 
 
