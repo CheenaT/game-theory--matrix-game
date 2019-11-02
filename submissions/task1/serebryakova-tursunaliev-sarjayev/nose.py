@@ -29,6 +29,7 @@ class TestNash:
         assert_equals(abs(func_cost - cost) < 0.00001, True)
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+    
     def test_2(self):
         matrix = np.array([
         [4, 7, 2],
@@ -59,10 +60,38 @@ class TestNash:
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
         
-        
-        
-        
     def test_4(self):
+        matrix = np.array([
+        [1, 2, 3],
+        [2, 3, 4],
+        [3, 4, 5],
+        ])
+        func_p,func_q,func_cost = nash_equilibrium1(matrix)
+        cost = 3
+        p = np.array([0, 0, 1])
+        q = np.array([1, 0, 0])
+        assert_equals(abs(func_cost - cost) < 0.00001, True)
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)),
+            len(func_p))
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+    
+    def test_5(self):
+        matrix = np.array([
+        [4, 5, 6, 7],
+        [1, 2, 3, 4],
+        [3, 4, 5, 9],
+        [8, 6, 2, 4],
+        ])
+        func_p,func_q,func_cost = nash_equilibrium1(matrix)
+        cost = 5
+        p = np.array([0.75, 0, 0, 0.25])
+        q = np.array([0.5 , 0, 0.5, 0])
+        assert_equals(abs(func_cost - cost) < 0.00001, True)
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)),
+            len(func_p))
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+        
+    def test_6(self):
         matrix = np.array([
         [8, 4, 7],
         [6, 5, 9],
@@ -74,7 +103,7 @@ class TestNash:
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
         
-    def test_5(self):
+    def test_7(self):
         matrix = np.array([
         [4, 7, 2],
         [7, 3, 2],
@@ -86,7 +115,7 @@ class TestNash:
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
         
-    def test_6(self):
+    def test_8(self):
         matrix = np.array([
         [4, 0, 6, 2, 2, 1],
         [3, 8, 4, 10, 4, 4],
@@ -100,5 +129,33 @@ class TestNash:
         assert_equals(abs(func_cost - cost) < 0.00001, True)
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
         assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+        
+    def test_9(self):
+        matrix = np.array([
+        [1, 2, 3],
+        [2, 3, 4],
+        [3, 4, 5],
+        ])
+        func_p,func_q,func_cost = nash_equilibrium1(matrix)
+        p,q,cost=nash.nash_equilibrium(matrix)
+        assert_equals(abs(func_cost - cost) < 0.00001, True)
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)), len(func_p))
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+
+
+    def test_10(self):
+        matrix = np.array([
+        [4, 5, 6, 7],
+        [1, 2, 3, 4],
+        [3, 4, 5, 9],
+        [8, 6, 2, 4],
+        ])
+        func_p,func_q,func_cost = nash_equilibrium1(matrix)
+        p,q,cost=nash.nash_equilibrium(matrix)
+        assert_equals(abs(func_cost - cost) < 0.00001, True)
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_p,p)),
+            len(func_p))
+        assert_equals(sum(abs(x - y) < 0.00001 for x,y in zip(func_q,q)), len(func_q))
+
         
 
