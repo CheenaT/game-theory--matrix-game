@@ -1,0 +1,69 @@
+\documentclass[10pt, pdf, hyperref={unicode}]{beamer}
+\usetheme{Singapore}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\title{Отчёт по заданию №4}
+\author{Турсуналиев Чингиз, Серебрякова София, Сарджаев Мередкули, Ройтман Андрей}
+\date{апрель 2020 г.}
+
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}{Число всех поставок}
+		\begin{figure}
+			\includegraphics[scale=0.5]{"defects.png"}
+			\centering
+		\end{figure}
+		Слева — поставки Harpy \& Co. Справа — Westeros Inc.
+		Рыжим обозначена масса брака, розовым — масса качественной продукции.\\
+		Общая масса производства почти не отличается.
+		
+	\end{frame}
+
+	\begin{frame}{Суммарное число брака}		
+		\begin{figure}
+			\includegraphics[scale=0.5]{"all broken.png"}
+			\centering
+		\end{figure}
+		
+		Слева — поставки Harpy \& Co. Справа — Westeros Inc.
+		Как видно, количество бракованых мечей у первых заметно меньше.
+	\end{frame}
+
+	\begin{frame}{Помесячное производство}
+		\begin{figure}
+			\includegraphics[scale=0.23]{"made and broken for each month.png"}
+			\centering
+		\end{figure}
+	
+		Сверху — поставки Harpy \& Co. Снизу — Westeros Inc. Рыжим обозначена масса брака, розовым — масса качественной продукции.
+	\end{frame}
+
+	\begin{frame}{О качестве производства}
+		\begin{block}{}
+			По диаграммам на предыдущем слайде видно, что количество брака у кампании Harpy \& Co снижается заметно сильнее, чем у Westeros Inc.
+		\end{block}
+	
+		\begin{block}{}
+			Значит, со временем качество производства у первой кампании выросло больше.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Заключение и выводы}
+		\begin{itemize}
+			\item Качество производства у Harpy \& Co возростает быстрее, чем у Westeros Inc.
+			
+			\item То есть количество брака в поставках будет у них меньше.
+			
+			\item Рекомендуется отдать предпочтение кампании Harpy \& Co.
+		\end{itemize}
+	\end{frame}
+\end{document}
